@@ -1,0 +1,5 @@
+extends: eslint-config-remko
+env:
+  browser: true
+rules:
+  no-var: 0

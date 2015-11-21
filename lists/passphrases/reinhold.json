@@ -1,0 +1,27 @@
+{
+	"source": "http://diceware.blogspot.be/2013/12/making-random-letter-passwords-memorable.html",
+	"sentences": [
+		[2],
+		[2, 4],
+		[2, 4, 6],
+		[0, 2, 4, 6],
+		[0, 2, 3, 4, 6],
+		[0, 1, 2, 3, 4, 6],
+		[0, 1, 2, 3, 4, 5, 6],
+		[0, 1, 2, 4, 5, 6, 7, 9],
+		[0, 1, 2, 3, 4, 5, 6, 7, 9],
+		[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+	],
+	"words": [
+		["Arnold's", "Bob's", "Charlie's", "Dona's", "Ed's", "Frank's", "Gloria's", "Hana's", "Ivy's", "Jane's", "Ken's", "Lucy's", "Mary's", "Nancy's", "Olga's", "Pete's", "Quincy's", "Randy's", "Sue's", "Tom's", "Uri's", "Vivian's", "Walt's", "Xavier's", "Yolanda's", "Zed's"],
+		["amazing", "big", "cuddly", "deadly", "empty", "fine", "golden", "hot", "interesting", "jolly", "kissable", "lonely", "merry", "nice", "old", "pink", "quiet", "red", "smooth", "tiny", "urban", "vivacious", "wild", "eXotic", "yelping", "zigzagging" ],
+		["artists", "brothers", "cats", "ducks", "editors", "frogs", "goats", "hippos", "infants", "judges", "kittens", "llamas", "mermaids", "nuns", "owls", "peacocks", "quails", "rodents", "snails", "tigers", "umpires", "vampires", "wolves", "eXecutives", "yankees", "zebras"],
+		["always", "boldly", "craftily", "deftly", "easily", "foolishly", "gaily", "hopelessly", "intensely", "joyously", "kindly", "laughingly", "morosely", "noisily", "often", "playfully", "quickly", "regretfully", "swiftly", "timidly", "urgently", "vividly", "willingly", "eXcitedly", "yearningly", "zealously" ],
+		["arrest", "batter", "cover", "drop", "engage", "fight", "grab", "hold", "inject", "join", "keep", "lash", "mangle", "nab", "ogle", "pester", "query", "ruin", "slay", "tackle", "upset", "view", "wrestle", "eXpel", "yank", "zone"],
+		["angry", "bossy", "crazy", "dumb", "eager", "fat", "green", "heavy", "incompetent", "jealous", "kinky", "lowly", "mad", "naughty", "oily", "poor", "quaking", "rude", "snarky", "tired", "ugly", "vicious", "wimpy", "eXcellent", "yellow", "zany"],
+		["ants", "boys", "crooks", "doctors", "eels", "foxes", "goons", "horses", "idiots", "jokers", "kings", "librarians", "monsters", "nerds", "orcs", "pigs", "queens", "robbers", "slugs", "thugs", "uncles", "vandals", "wardens", "eXperts", "youths", "zombies"],
+		["arousing", "bringing", "causing", "defying", "enjoying", "finding", "gaining", "helping", "insulting", "joining", "killing", "leaving", "making", "noting", "owning", "packing", "questioning", "rejecting", "seeking", "testing", "urging", "viewing", "wishing", "eXtracting", "yielding", "zooming"],
+		["awful", "boastful", "cold", "dumb", "easy", "fast", "glorious", "happy", "intense", "juvenile", "keen", "lurid", "messy", "neglected", "open", "proud", "queer", "redolent", "simple", "tenuous", "useless", "velvet", "witty", "eXtreme", "yummy", "zesty"],
+		["admiration", "bliss", "comfort", "delight", "energy", "fame", "growth", "health", "interest", "joy", "karma", "love", "music", "nothingness", "obsession", "power", "quality", "refreshment", "success", "truth", "unity", "victory", "wisdom", "eXcess", "yogurt", "zeros"]
+	]
+}
