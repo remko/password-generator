@@ -71,7 +71,7 @@ $(function () {
 					currentListSource = list.source;
 				})
 				.fail(function (req) {
-					console.log(req);
+					console.log(req); // eslint-disable-line no-console
 				})
 				.always(function () {
 					setControlsEnabled(true);
@@ -135,21 +135,31 @@ $(function () {
 			return sentence.join(" ") + (sentenceIndices.length > 1 ? "." : "!");
 		}
 
-		function update() {
+		function update(resetValue) {
 			if (currentList) {
 				$("#passphrase-list-source").attr("href", currentList.source);
 
-				var count = parseInt($("#passphrase-count").val(), 10);
-				var result = [];
-				for(var i = 0; i < count; ++i) {
-					result.push(random.integer(0, 25));
+				// Update result (if necessary)
+				if (resetValue) {
+					var newResult = [];
+					var newCount = parseInt($("#passphrase-count").val(), 10);
+					for(var i = 0; i < newCount; ++i) {
+						newResult.push(random.integer(0, 25));
+					}
+					$("#passphrase-result").val(newResult.map(function (c) {
+						return String.fromCharCode(97 + c);
+					}).join(""));
 				}
 
-				$("#passphrase-result").val(result.map(function (c) {
-					return String.fromCharCode(97 + c);
-				}).join(""));
+				// Convert result to array
+				var resultString = $("#passphrase-result").val().toLowerCase();
+				var result = [];
+				for (var i = 0; i < resultString.length; ++i) {
+					result.push(resultString.charCodeAt(i) - 97);
+				}
+				result = result.filter(function (c) { return c >= 0 && c < 26; });
 
-				var entropy = Math.floor(count*Math.log(26) / Math.log(2));
+				var entropy = Math.floor(result.length*Math.log(26) / Math.log(2));
 				$("#passphrase-entropy")
 					.text("(" + entropy + " bits entropy)")
 					.css("color", getColorForEntropy(entropy));
@@ -187,11 +197,11 @@ $(function () {
 					currentList = result;
 				})
 				.fail(function (req) {
-					console.log(req);
+					console.log(req); // eslint-disable-line no-console
 				})
 				.always(function () {
 					setControlsEnabled(true);
-					update();
+					update(true);
 				});
 		}
 
@@ -199,8 +209,9 @@ $(function () {
 			return $("<option />").val(i).text(val.name);
 		}));
 
-		$("#passphrase-count").on("change", update);
-		$("#passphrase-refresh").on("click", update);
+		$("#passphrase-count").on("change", function () { update(true); });
+		$("#passphrase-refresh").on("click", function () { update(true); });
+		$("#passphrase-result").on("input", function () { update(false); });
 
 		loadList();
 	})();
