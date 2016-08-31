@@ -1,6 +1,9 @@
 /* global $, _, Random */
+/* eslint block-scoped-var: 0, no-redeclare: 0 */
 
 $(function () {
+	"use strict";
+
 	var random = new Random(Random.browserCrypto);
 
 	function getColorForEntropy(entropy) {
@@ -17,7 +20,8 @@ $(function () {
 		var lists = [
 			{ name: "English", url: "/password-generator/lists/diceware/diceware.wordlist.asc", source: "http://world.std.com/%7Ereinhold/diceware.wordlist.asc" },
 			{ name: "English (Beale)", url: "/password-generator/lists/diceware/beale.wordlist.asc", source: "http://world.std.com/%7Ereinhold/beale.wordlist.asc" },
-			{ name: "Dutch (Bart Van den Eynde)", url: "/password-generator/lists/diceware/DicewareDutch.txt", source: "http://theworld.com/%7Ereinhold/DicewareDutch.txt" }
+			{ name: "Dutch, No Composite Words (Remko Tronçon)", url: "/password-generator/lists/diceware/diceware-wordlist-nl.txt", source: "/blog/diceware-nl" },
+			{ name: "Dutch, Composite Words (Remko Tronçon)", url: "/password-generator/lists/diceware/diceware-wordlist-composites-nl.txt", source: "/blog/diceware-nl" }
 		];
 		var currentList;
 		var currentListSource;
@@ -143,7 +147,7 @@ $(function () {
 				if (resetValue) {
 					var newResult = [];
 					var newCount = parseInt($("#passphrase-count").val(), 10);
-					for(var i = 0; i < newCount; ++i) {
+					for (var i = 0; i < newCount; ++i) {
 						newResult.push(random.integer(0, 25));
 					}
 					$("#passphrase-result").val(newResult.map(function (c) {
